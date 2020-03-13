@@ -5,10 +5,12 @@
         <link rel="stylesheet" href="style5.css">
     </head>
     <body>
-        <form name="questionForm" >
+        <div class="content">
+        <form name="questionform" >
         <h2>Fun survey</h2>
         <h3>1.Pick the image which strikes you the most?</h3>
-            <br>
+        <ul>
+            <div>
                 <input type="radio" name="q1" id="qw" value="a" class="input-hidden">
                 <label for="qw"><img src="qw.jpg" alt="Farming">
                 </label>
@@ -21,7 +23,8 @@
                 <input type="radio" name="q1" id="bk" value="d" class="input-hidden">
                 <label for="bk"><img src="bk.jpg" alt="Books">
                 </label>
-               <br>
+            </div>
+        </ul>
                 
               <h3>2.Which is the best quotes that matches your interest?</h3>
               <br>
@@ -193,7 +196,27 @@
         </form>
        
         <script>
-            function check()
+             function check() {
+            let dataArray = {
+                'a': 0,
+                'b': 0,
+                'c': 0,
+                'd': 0,
+                '': 0
+            };
+            for (let i = 1; i <= 10; i++) {
+                let answer = document.questionform['q' + i].value;
+                console.log(answer);
+                dataArray[answer] = dataArray[answer] + 1;
+                console.log(dataArray[answer]);
+            }
+            console.log(dataArray);
+            }
+           
+            //if()
+             
+
+          /*function check1()
             {
                 var q1=document.questionForm.q1.value;
                 var q2=document.questionForm.q2.value;
@@ -206,7 +229,8 @@
                 var q9=document.questionForm.q9.value;
                 var q10=document.questionForm.q10.value;
                 alert("q1 "+q1+" q2 "+q2+" q3 "+q3+" q4 "+q4+" q5 "+q5+" q6 "+q6+" q7 "+q7+" q8 "+q8+" q9 "+q9+" q10 "+q10);
-            }
+            }*/
         </script>
-        </body>
+        </div>
+    </body>
 </html>    
